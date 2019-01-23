@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="eventsApp">
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+
+
+
+<div ng-controller="EventController">
+  <span>{{myDate | date : 'yyyy-MM-dd'}}</span>
+  </div>
+  
+
+<div class="card-columns">
+  <div class="card p-3" *ngFor = "let product of post" style="width: 18rem;" >
+    <img class="card-img-top" style ="width:20 rem;" src="{{product.product_image}}" href="#">
+    <div class="card-body">
+      <h5 class="card-title">{{product.product_title}}</h5>
+      <h5 class="card-title">{{product.product_type}}</h5>
+      <a href="#" class="btn btn-outline-primary" [routerLink]="['/product',product.product_title,product.product_description,product.product_unitPrice,product.product_releaseDate,product.product_type,product.product_image]" routerLinkActive='active'>View more</a>
+    </div>
+  </div>
+</div>
+
+<div class="container"> 
+<div class="row"> 
+  <!-- routing here --> 
+  <router-outlet></router-outlet> 
+</div> 
+</div>
+
+<script src="test.js"></script>

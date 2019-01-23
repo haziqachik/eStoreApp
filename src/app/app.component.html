@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<nav class="navbar navbar-expand-sm bg-light navbar-inverse">
+<div class="container-fluid">
+ <div class="navbar-header">
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse1">
+ <ul class="nav navbar-nav">
+ <li><a class="nav-link" routerLink="/homepage">Homepage</a></li>
+ <li><a class="nav-link" routerLink="/checkout">Checkout</a></li>
+ <li><a class="nav-link" routerLink="/admin">Admin</a></li>
+ <li><a class="nav-link" routerLink="/user">User</a></li>
+ <li><a class="nav-link" routerLink="/product">Product</a></li>
+ <li><a class="nav-link" routerLink="/billing">Billing</a></li>
+ 
+    <ul class="nav navbar-nav navbar-right">
+	 <li><a class="nav-link" routerLink="/logout"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+     <li><a class="nav-link" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+</ul>
+ </div>
+ </div>
+ </div>
+</nav>
+
+<div class="container">
+ <div class="row">
+ <router-outlet></router-outlet>
+ </div>
+ </div>

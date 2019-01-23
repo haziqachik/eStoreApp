@@ -1,0 +1,35 @@
+.card { background-color: rgba(245, 245, 245, 0.1);
+    width: 100%;
+    text-align: center; }
+    .card-header, .card-footer { opacity: 1}
+
+  .blog-tags ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+  }
+  .blog-tags li + li {
+    margin-left: .5rem;
+  }
+  .blog-tags a {
+    border: 1px solid lighten(#333, 40%);
+    border-radius: 3px;
+    color: lighten(#333, 40%);
+    font-size: .75rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    padding: 0 .5rem;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 5rem;
+  }
+   
+  .rev { 
+      min-height: 200px;
+      max-height: 200px;
+      width: 100%;  
+  }

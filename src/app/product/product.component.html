@@ -1,0 +1,70 @@
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/homepage">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Product</li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="row">
+      <div class="w667-12 cm-6">
+          <img class="img" src="{{image}}" href="#">
+      </div>
+      <div class="w667-12 cm-6">
+      <ul>
+          <h1>{{title}}</h1>
+          <br><h2>${{price}}</h2>
+          <br>Date:{{date}} <br>
+          <br>Type:{{type}} <br>
+          <input type="number" id="number" value="0" min="1" max="{{inStock}}"/>
+          <br><br>
+          <button (click)="addtocart()" class="btn btn-primary">Add to Cart</button>
+          <br><br>
+          <p>{{desc}}</p>
+      </ul>
+      </div>
+  </div>
+</div>
+
+  <hr class="line">
+  <div *ngIf="edited" class="alert alert-success box-msg" role="alert"> 
+      <strong>Post Successful!</strong> Your review has been posted. Thank you for your review. 
+  </div>
+  <div class="container">
+    
+   <h2>Reviews</h2>
+    <div class="row" *ngFor="let rev of revs"> 
+      <div class="card bg-dark text-white"> 
+        <div class="card-title"> <h1>{{rev.revname}}</h1></div>
+        <div class="card-text">{{rev.revrating}}</div>
+        <div class="card-text">{{rev.revdescription}}</div>
+        <div class="card-text"><a href="#">USERNAME</a></div>
+      </div>
+      </div>
+    </div>
+
+  
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit (myForm,content)">
+    <br><input type="text" formControlName="revname" placeholder="What is this review about ?" id="name" class="form-control"/>
+    <br><input type="text" formControlName="revrate" placeholder="Please rate that product !" id="rate" class="form-control"/>  
+    <br><input type="text" formControlName="revdescription" class="rev" id="review" name="review" placeholder="Tell us more about your review.">
+    <br><br><button type="submit" class="btn btn-primary">Post it!</button>
+  </form>
+
+<ng-template #content let-modal> 
+    <div class="modal-header"> 
+      <h4 class="modal-title" id="modal-basic-title">Add to Cart</h4> 
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"> 
+        <span aria-hidden="true">&times;</span> 
+      </button> 
+    </div> 
+    <div class="modal-body"> 
+      <p> 
+        Item Added Successfully
+      </p> 
+    </div> 
+    <div class="modal-footer"> 
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button> 
+    </div> 
+  </ng-template>

@@ -1,0 +1,6 @@
+<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit(myForm)">
+<p><input formControlName="name" id="name" placeholder="Your name"/></p>
+<p><input formControlName="password" id="password" placeholder="Your password" /></p>
+<p><input formControlName="role" id="role" placeholder="user/admin" /></p>
+<p><button class="btn btn-primary" type="submit" >Register</button></p>
+</form>

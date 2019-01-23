@@ -27,8 +27,6 @@ app.set('port', port);
 
 // Create HTTP server
 const server = http.createServer(app);
-server.listen(port, () => console.log(`API running on localhost:${port}`));
-
 MongoClient.connect('mongodb://user:Userpw1@ds157204.mlab.com:57204/estore', { useNewUrlParser: true }, (err, database) => {
  if (err) return console.log(err)
  db = database.db('estore');
